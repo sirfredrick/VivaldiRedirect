@@ -6,7 +6,7 @@ Vivaldi Redirect is a ~~Chrome~~ Vivaldi Extension that redirects normal web req
 
 ## Installation
 
-The easiest way to install this extension is to go to the [Chrome Webstore page](https://chrome.google.com/webstore/category/extensions).
+The easiest way to install this extension is to go to the [Chrome Webstore page](https://chrome.google.com/webstore/detail/vivaldi-redirect/kpaefdmmdcioicgjfpbmlaokcnidljdf).
 
 If you want to install it manually then...
 
