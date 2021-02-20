@@ -33,7 +33,7 @@ branch. Pull requests are warmly welcome.
 
 ## Copyright
 
-popup.html, popup.js, about.html, about.js, refresh.min.js, and background.js Copyright © 2019 Jeffrey Tucker
+popup.html, popup.js, about.html, about.js, refresh.min.js, and background.js Copyright © 2019-2021 Jeffrey Tucker
 
 material.min.css, material.min.js Copyright © 2015 Google
 
