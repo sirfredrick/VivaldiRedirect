@@ -1,6 +1,6 @@
 {
     "name": "Vivaldi Redirect",
-    "version": "1.0.2",
+    "version": "2.0.0",
     "description": "Redirect URLs to support Vivaldi Browser",
     "icons": {
         "16": "icon16.png",
