@@ -15,7 +15,7 @@
 // Sets checkboxes to extension sync data when popup.html loads
 window.addEventListener("load", function (event) {
     chrome.storage.sync.get('switchKey', function (data) {
-        var switches = Array(42);
+        var switches = Array(15);
         if (data.switchKey && data.switchKey.length) {
             for (var i = 0; i < data.switchKey.length; i++) {
                 switches[i] = data.switchKey[i];

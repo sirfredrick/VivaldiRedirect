@@ -13,17 +13,18 @@
 // limitations under the License.
 
 // List of websites associated with Vivaldi Browser bookmark urls
-var urls = ["https://*.booking.com/*", "https://*.ebay.com/*", "https://*.amazon.com/*", "https://*.expedia.com/*", "https://*.kayak.com/*", "https://*.garmin.com/*", "https://*.bose.com/*", "https://*.domain.com/*", "https://*.thinkgeek.com/*", "https://*.cyberlink.com/*", "https://*.ihomeaudio.com/*", "https://*.ionos.com/*", "https://*.namecheap.com/*", "https://coffee.org/*", "https://*.timex.com/*", "https://*.kobo.com/*", "https://*.flipkey.com/*", "https://*.urbanoutfitters.com/*", "https://*.target.com/*", "https://*.greenmangaming.com/*", "https://*.gamersgate.com/*", "https://*.aliexpress.com/*", "https://*.missguidedus.com/*", "https://*.zappos.com/*", "https://*.groupon.com/*", "https://*.gearbest.com/*", "https://*.monsterstore.com/*", "https://*.brookstone.com/*", "https://shop.lego.com/*", "https://*.livingsocial.com/*", "https://*.speckproducts.com/*", "https://*.qatarairways.com/*", "https://www.trivago.com/*", "https://*.airbnb.com/*", "https://*.rentalcars.com/*", "https://*.tripadvisor.com/*", "https://*.cheapoair.com/*", "https://*.hotelwiz.com/*", "https://*.dohop.com/*", "https://*.hotels.com/*", "https://ceoworld.biz/*", "https://*.yelp.com/*"];
+var urls = ["https://*.booking.com/*", "https://*.ebay.com/*", "https://*.amazon.com/*", "https://*.aliexpress.com/*", "https://*.homedepot.com/*", "https://*.target.com/*", "https://*.airbnb.com/*", "https://*.instacart.com/*", "https://*.walmart.com/*", "https://*.macys.com/*", "https://*.overstock.com/*", "https://*.rakuten.com/*", "https://*.expedia.com/*", "https://*.hulu.com/*", "https://*.morrisons.com/*", "https://*.agoda.com/*"];
 
 // List of Vivaldi Browser bookmark urls
-var vivaldiUrls = ["https://vivaldi.com/bk/bookingcom-en-us", "https://vivaldi.com/bk/ebay-en-us", "https://vivaldi.com/bk/amazon", "https://vivaldi.com/bk/expedia", "https://vivaldi.com/bk/kayak-en-us", "https://vivaldi.com/bk/garmin-en-us", "https://vivaldi.com/bk/bose-en-us", "https://vivaldi.com/bk/domaincom-en-us", "https://vivaldi.com/bk/thinkgeek-en-us", "https://vivaldi.com/bk/cyberlinksoftware-en-us", "https://vivaldi.com/bk/ihome-en-us", "https://vivaldi.com/bk/11internet-en-us", "https://vivaldi.com/bk/namecheap-en-us", "https://vivaldi.com/bk/coffeeorg-en-us", "https://vivaldi.com/bk/timex-en-us", "https://vivaldi.com/bk/kobo-en-us", "https://vivaldi.com/bk/flipkey-en-us", "https://vivaldi.com/bk/urbanoutfitters-en-us", "https://vivaldi.com/bk/target-us", "https://vivaldi.com/bk/greenmangaming-en-us", "https://vivaldi.com/bk/gamersgate", "https://vivaldi.com/bk/aliexpresscom-us", "https://vivaldi.com/bk/missguided-us", "https://vivaldi.com/bk/zappos-en-us", "https://vivaldi.com/bk/groupon", "https://vivaldi.com/bk/gearbest-en-us", "https://vivaldi.com/bk/monsterproducts-en-us", "https://vivaldi.com/bk/brookstonecom-en-us", "https://vivaldi.com/bk/lego-en-us", "https://vivaldi.com/bk/livingsocial-en-us", "https://vivaldi.com/bk/speck-en-us", "https://vivaldi.com/bk/qatar", "https://vivaldi.com/bk/trivago", "https://vivaldi.com/bk/airbnb", "https://vivaldi.com/bk/rentalcars", "https://vivaldi.com/bk/tripadvisor-world", "https://vivaldi.com/bk/cheapoair-en-us", "https://vivaldi.com/bk/hotelwiz-en-us", "https://vivaldi.com/bk/dohop", "https://vivaldi.com/bk/hotelscom", "https://vivaldi.com/bk/ceoworldmagazine-en-us", "https://vivaldi.com/bk/yelp-en-us"];
+var vivaldiUrls = ["https://vivaldi.com/bk/bookingcom-en-us", "https://vivaldi.com/bk/ebay-en-us", "https://vivaldi.com/bk/amazon", "https://vivaldi.com/bk/aliexpresscom-us", "http://vivaldi.com/bk/homedepot-us", "https://vivaldi.com/bk/target-us",  "https://vivaldi.com/bk/airbnb-us-bk", "https://vivaldi.com/bk/sd-instacart-en-us", "https://vivaldi.com/bk/walmart-pc", "https://vivaldi.com/bk/macys-en-us-bk", "https://vivaldi.com/bk/overstock-us-bk", "https://vivaldi.com/bk/rakuten-us-bk", "https://vivaldi.com/bk/expedia", "https://vivaldi.com/bk/hulu", "https://vivaldi.com/bk/morrisons-gb", "https://vivaldi.com/bk/agoda-in-sd"];
+
 var previousUrl = "https://sirfredrick.vivaldi.net/"; // Placeholder url for intial value
 var previousVivaldiUrl = "https://sirfredrick.vivaldi.net/"; // Placeholder url for intial value
 var bob = 0;
 
 // Sets extension sync data so that all checkboxes are selected on install
 chrome.runtime.onInstalled.addListener(function () {
-    var switches = Array(42).fill(true);
+    var switches = Array(15).fill(true);
     chrome.storage.sync.set({ "switchKey": switches }, function () {
         console.log("Initial save!");
     });
@@ -55,7 +56,7 @@ async function getVivaldiUrl(details) {
         await async function (resolve, reject) {
             var i;
             var shouldStop;
-            for (i = 0; (i < 42) && !shouldStop; i++) {
+            for (i = 0; (i < 15) && !shouldStop; i++) {
                 // If the current url matches any on the list AND
                 // to prevent looping redirects, if the previous Vivaldi url is not the same as the current Vivaldi url...
                 if (getDomain(urls[i]) === getDomain(details.url)) {
@@ -113,7 +114,7 @@ function log(x) {
 }
 // Grabs what checkboxes are currently check and stores them to extension sync storage
 async function saveInputs(checkboxes) {
-    var switches = Array(42).fill(true);
+    var switches = Array(15).fill(true);
     for (var i = 0; i < switches.length; i++) {
         switches[i] = checkboxes[i].checked;
     }
