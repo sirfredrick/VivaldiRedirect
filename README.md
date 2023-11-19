@@ -2,6 +2,8 @@
 
 ![Vivaldi Redirect](icon.png)
 
+I've archived this repository since I no longer maintain this extension. You can use [Redirector](https://chromewebstore.google.com/detail/redirector/ocgpenflpmgnfapjedencafcfakcekcd) to achieve the same functionality and add other redirects of your choosing. Email me at sirfredrickdev@vivaldi.net if you have any questions about setting up Redirector to replace Vivaldi Redirect. I'm grateful to everyone who enjoyed this extension!
+
 Vivaldi Redirect is a ~~Chrome~~ Vivaldi Extension that redirects normal web requests to their counterpart URLs from Vivaldi Browser's default bookmarks to support Vivaldi.
 
 ## Installation
